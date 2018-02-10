@@ -23,3 +23,13 @@ Dependencies:
 * tensorflow >= 1.5.0
 * Keras >= 2.1.3
 * avro >= 1.8.2
+
+## Quick Start
+
+#### Single device (GPU)
+Execute predict file to run model inference. 
+```
+python predict.py
+```
+
+#### Multiple devices (CPU and RPC)
