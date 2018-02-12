@@ -40,7 +40,7 @@ def node_4_block1():
 
 
 def node_4_block2():
-    block_input = Input(shape=(27648,))
+    block_input = Input(shape=(6272,))
     fc = Dense(2048, activation='relu')(block_input)
     return Model(block_input, fc)
 
