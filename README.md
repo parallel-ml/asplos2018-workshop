@@ -1,9 +1,12 @@
-# ASPLOS2018-workshop
-This repository demos parallelization of fully connected layer on state-of-art 
-deep learning neural network.
+# Real-Time Image Recognition Using Collaborative IoT Devices 
+__ACM ReQuEST workshop co-located with ASPLOS 2018__
+
+
+This repository contains demo files for demonstration of Musical Chair[^fn1] applied on two state-of-art 
+deep learning neural networks, AlexNet[^fn2] and VGG16[^fn3].
 
 ## Installation
-You need to make sure you have <b>Python 2.7</b> running on your device. We have
+Please make sure that you have <b>Python 2.7</b> running on your device. We have
 two versions of model inference. One is using GPU and running model inference on
 single machine. Another is using CPU and using RPC to off-shore the computation
 to other devices. We will have different installation guide for those two versions
@@ -97,3 +100,13 @@ python node.py
 ```angular2html
 python initial.py
 ```
+
+
+__References__
+[^fn1]: R. Hadidi, J. Cao, M. Woodward, M. Ryoo, and H. Kim, "Musical Chair: Efficient Real-Time Recognition Using Collaborative IoT Devices," ArXiv e-prints:1802.02138.
+[^fn2]: A. Krizhevsky, I. Sutskever, and G. E. Hinton, "Imagenet Classification With
+  Deep Convolutional Neural Networks}," in Advances in Neural Information
+  Processing Systems (NIPS), pp. 1097--1105, 2012.
+[^fn3]: K. Simonyan and A. Zisserman, "Very Deep Convolutional Networks for
+  Large-Scale Image Recognition," in International Conference on
+  Learning Representations (ICLR), 2015.
