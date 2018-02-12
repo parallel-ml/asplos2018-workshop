@@ -24,6 +24,11 @@ Dependencies:
 * Keras >= 2.1.3
 * avro >= 1.8.2
 
+We have provided dependency file here. You can execute this file to install packages.
+```angular2html
+pip install -r requirements.txt
+```
+
 ## Quick Start
 
 #### Single device (GPU)
@@ -33,3 +38,30 @@ python predict.py
 ```
 
 #### Multiple devices (CPU and RPC)
+
+We make a checklist for you before running our program.
+- [ ] Have all correct packages installed on Raspberry Pi. 
+- [ ] The Raspberry PI has port 12345, 9999 open. 
+- [ ] Put correct IP address in IP table file `CPU/alexnet/resource/ip`. 
+The IP table file is in `json` format. 
+
+##### Start alex net system
+
+For Alex Net, we have same model partition, so we will use the same node file for 
+different system setup. The IP table is default to 4 devices setup. You need to 
+add 1 more IP address to `block1` if you want to test 6 devices setup.
+
+* On all of your device except the initial sender, run the node.
+```angular2html
+python node.py
+```
+
+* Start the data sender. You should be able to see console log.
+```angular2html
+python initial.py
+```
+
+* If you modify our code, you can use flag to debug.
+```angular2html
+python node.py -d
+```
