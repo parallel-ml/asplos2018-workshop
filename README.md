@@ -61,7 +61,7 @@ For AlexNet, we have same model partition, so we will use the same node file for
 different system setup. The IP table is default to 4 devices setup. You need to 
 add 1 more IP address to `block1` if you want to test 6 devices setup.
 
-![alexnet](https://github.com/parallel-ml/asplos2018-workshop/blob/master/figs/alexnet-nodes.pdf)
+![alexnet](https://github.com/parallel-ml/asplos2018-workshop/blob/master/figs/alexnet-nodes.png)
 
 * On all of your device except the initial sender, run the node.
 ```angular2html
@@ -86,7 +86,7 @@ two directories under `mutiple-devices/vgg16`. For `8devices`, you should have 2
 2 blocks in IP table. For `11devices`, you should have 7 devices for <b>block12345</b>,
 so put 7 IP addresses at IP table. 
 
-![vgg16](https://github.com/parallel-ml/asplos2018-workshop/blob/master/figs/vgg-8nodes.pdf)
+![vgg16](https://github.com/parallel-ml/asplos2018-workshop/blob/master/figs/vgg-8nodes.png)
 
 * On all of your device except the initial sender, run the node.
 ```angular2html
