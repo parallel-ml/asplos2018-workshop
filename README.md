@@ -52,7 +52,7 @@ CUDA_VISIBLE_DEVICE= python predict.py
 We make a checklist for you before running our program.
 - [ ] Have all correct packages installed on Raspberry Pi. 
 - [ ] The Raspberry PI has port 12345, 9999 open. 
-- [ ] Put correct IP address in IP table file `CPU/alexnet/resource/ip`. 
+- [ ] Put correct IP address in IP table file `mutiple-devices/alexnet/resource/ip`. 
 The IP table file is in `json` format. 
 
 #### Start alex net system
@@ -79,7 +79,7 @@ python node.py -d
 #### Start vgg16 net system
 
 For VGG16, we have different model separation for different system setup, so we put
-two directories under `CPU/vgg16`. For `8devices`, you should have 2 devices for
+two directories under `mutiple-devices/vgg16`. For `8devices`, you should have 2 devices for
 <b>block234</b> and <b>block6</b>, which means you need 2 IP addresses for those
 2 blocks in IP table. For `11devices`, you should have 7 devices for <b>block12345</b>,
 so put 7 IP addresses at IP table. 
