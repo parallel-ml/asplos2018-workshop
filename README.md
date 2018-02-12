@@ -9,7 +9,8 @@ single machine. Another is using CPU and using RPC to off-shore the computation
 to other devices. We will have different installation guide for those two versions
 model inference. 
 
-#### Single device (GPU).
+### Single device (GPU).
+_(This is NVidia Jetson TX2 version in our paper)_
 
 Dependencies:
 * tensorflow-gpu >= 1.5.0
@@ -20,7 +21,8 @@ pip install keras
 ```
 [Please refer to official installation guideline from Keras for more information](https://github.com/keras-team/keras)
 
-#### Multiple devices (CPU and RPC).
+### Multiple devices (CPU and RPC).
+_(This is Raspberry PI 3 versions in our paper)_
 
 Dependencies:
 * tensorflow >= 1.5.0
