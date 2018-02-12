@@ -42,7 +42,7 @@ def block12345():
     return model
 
 
-def block6():
+def fc1():
     """ Block 6 is the first fully connected layer in VGG16. """
     image = Input(shape=(25088,))
     layer = Dense(2048, activation='relu')(image)
@@ -50,7 +50,7 @@ def block6():
     return model
 
 
-def block7():
+def fc2():
     """ Block 7 is the last two fully connected layer. """
     image = Input(shape=(4096,))
     layer = Dense(4096, activation='relu')(image)

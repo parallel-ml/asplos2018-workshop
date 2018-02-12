@@ -135,22 +135,22 @@ class Responder(ipc.Responder):
                     if req['next'] == 'block12345':
                         node.log('block12345 gets data')
                         X = np.fromstring(bytestr, np.uint8).reshape(224, 224, 3)
-                        node.model = ml.block12345() if node.model is None else node.model
+                        node.model = ml.block12345()
                         output = node.model.predict(np.array([X]))
                         node.log('finish block12345 forward')
                         for _ in range(2):
-                            Thread(target=self.send, args=(output, 'block6', req['tag'])).start()
+                            Thread(target=self.send, args=(output, 'fc1', req['tag'])).start()
 
-                    elif req['next'] == 'block6':
-                        node.log('block6 gets data')
+                    elif req['next'] == 'fc1':
+                        node.log('fc1 gets data')
                         X = np.fromstring(bytestr, np.float32).reshape(25088)
-                        node.model = ml.block6() if node.model is None else node.model
+                        node.model = ml.fc1()
                         output = node.model.predict(np.array([X]))
-                        node.log('finish block6 forward')
-                        Thread(target=self.send, args=(output, 'block7', req['tag'])).start()
+                        node.log('finish fc1 forward')
+                        Thread(target=self.send, args=(output, 'fc2', req['tag'])).start()
 
-                    elif req['next'] == 'block7':
-                        node.log('block7 gets data')
+                    elif req['next'] == 'fc2':
+                        node.log('fc2 gets data')
                         X = np.fromstring(bytestr, np.float32).reshape(2048)
                         node.input.append(X)
                         node.log('input size', str(len(node.input)))
@@ -162,7 +162,7 @@ class Responder(ipc.Responder):
                         while len(node.input) > 2:
                             node.input.popleft()
                         X = np.concatenate(node.input)
-                        node.model = ml.block7() if node.model is None else node.model
+                        node.model = ml.fc2()
                         output = node.model.predict(np.array([X]))
                         node.log('finish model inference')
                         Thread(target=self.send, args=(output, 'initial', req['tag'])).start()
@@ -241,18 +241,18 @@ def main(cmd):
     # read ip resources from config file
     with open('resource/ip') as file:
         address = yaml.safe_load(file)
-        node.ip['block6'] = Queue()
-        node.ip['block7'] = Queue()
+        node.ip['fc1'] = Queue()
+        node.ip['fc2'] = Queue()
         node.ip['initial'] = Queue()
         address = address['node']
-        for addr in address['block6']:
+        for addr in address['fc1']:
             if addr == '#':
                 break
-            node.ip['block6'].put(addr)
-        for addr in address['block7']:
+            node.ip['fc1'].put(addr)
+        for addr in address['fc2']:
             if addr == '#':
                 break
-            node.ip['block7'].put(addr)
+            node.ip['fc2'].put(addr)
         for addr in address['initial']:
             if addr == '#':
                 break
