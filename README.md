@@ -15,7 +15,10 @@ Dependencies:
 * tensorflow-gpu >= 1.5.0
 * Keras >= 2.1.3
 
-[We suggest to follow official installation guideline from Keras.](https://github.com/keras-team/keras)
+```angular2html
+pip install keras
+```
+[Please refer to official installation guideline from Keras for more information](https://github.com/keras-team/keras)
 
 #### Multiple devices (CPU and RPC).
 
