@@ -105,9 +105,7 @@ python initial.py
 
 ### Refereces
 [1]: R. Hadidi, J. Cao, M. Woodward, M. Ryoo, and H. Kim, "Musical Chair: Efficient Real-Time Recognition Using Collaborative IoT Devices," ArXiv e-prints:1802.02138.
-[2]: A. Krizhevsky, I. Sutskever, and G. E. Hinton, "Imagenet Classification With
-  Deep Convolutional Neural Networks}," in Advances in Neural Information
-  Processing Systems (NIPS), pp. 1097--1105, 2012.
-[3]: K. Simonyan and A. Zisserman, "Very Deep Convolutional Networks for
-  Large-Scale Image Recognition," in International Conference on
-  Learning Representations (ICLR), 2015.
+
+[2]: A. Krizhevsky, I. Sutskever, and G. E. Hinton, "Imagenet Classification With Deep Convolutional Neural Networks}," in Advances in Neural InformationProcessing Systems (NIPS), pp. 1097--1105, 2012.
+
+[3]: K. Simonyan and A. Zisserman, "Very Deep Convolutional Networks for Large-Scale Image Recognition," in International Conference onLearning Representations (ICLR), 2015.
