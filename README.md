@@ -55,11 +55,13 @@ We make a checklist for you before running our program.
 - [ ] Put correct IP address in IP table file `mutiple-devices/alexnet/resource/ip`. 
 The IP table file is in `json` format. 
 
-#### Start alex net system
+#### AlexNet
 
-For Alex Net, we have same model partition, so we will use the same node file for 
+For AlexNet, we have same model partition, so we will use the same node file for 
 different system setup. The IP table is default to 4 devices setup. You need to 
 add 1 more IP address to `block1` if you want to test 6 devices setup.
+
+![alexnet][https://github.com/parallel-ml/asplos2018-workshop/blob/master/figs/alexnet-nodes.pdf]
 
 * On all of your device except the initial sender, run the node.
 ```angular2html
@@ -76,13 +78,15 @@ python initial.py
 python node.py -d
 ```
 
-#### Start vgg16 net system
+#### VGG16
 
 For VGG16, we have different model separation for different system setup, so we put
 two directories under `mutiple-devices/vgg16`. For `8devices`, you should have 2 devices for
 <b>block234</b> and <b>block6</b>, which means you need 2 IP addresses for those
 2 blocks in IP table. For `11devices`, you should have 7 devices for <b>block12345</b>,
 so put 7 IP addresses at IP table. 
+
+![alexnet][https://github.com/parallel-ml/asplos2018-workshop/blob/master/figs/vgg-8nodes.pdf]
 
 * On all of your device except the initial sender, run the node.
 ```angular2html
