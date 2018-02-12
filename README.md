@@ -9,7 +9,7 @@ single machine. Another is using CPU and using RPC to off-shore the computation
 to other devices. We will have different installation guide for those two versions
 model inference. 
 
-### Single device (GPU).
+### Single device (GPU and CPU).
 _(This is NVidia Jetson TX2 version in our paper)_
 
 Dependencies:
@@ -36,13 +36,18 @@ pip install -r requirements.txt
 
 ## Quick Start
 
-#### Single device (GPU)
+### Single device (GPU anc CPU)
+#### GPU Version
 Execute predict file to run model inference. 
 ```
 python predict.py
 ```
+#### CPU Version
+```
+CUDA_VISIBLE_DEVICE= python predict.py
+```
 
-#### Multiple devices (CPU and RPC)
+### Multiple devices (CPU and RPC)
 
 We make a checklist for you before running our program.
 - [ ] Have all correct packages installed on Raspberry Pi. 
@@ -50,7 +55,7 @@ We make a checklist for you before running our program.
 - [ ] Put correct IP address in IP table file `CPU/alexnet/resource/ip`. 
 The IP table file is in `json` format. 
 
-##### Start alex net system
+#### Start alex net system
 
 For Alex Net, we have same model partition, so we will use the same node file for 
 different system setup. The IP table is default to 4 devices setup. You need to 
@@ -71,7 +76,7 @@ python initial.py
 python node.py -d
 ```
 
-##### Start vgg16 net system
+#### Start vgg16 net system
 
 For VGG16, we have different model separation for different system setup, so we put
 two directories under `CPU/vgg16`. For `8devices`, you should have 2 devices for
