@@ -1,3 +1,4 @@
+""" Define alexnet model. """
 from keras.layers import Conv2D, MaxPooling2D, Input, Flatten, Dense
 from keras.models import Model
 
@@ -24,7 +25,7 @@ def conv(layer, filters, kernal, activation='relu', pooling=True, stride=(1, 1))
     return layer
 
 
-def node_4_block1():
+def block1():
     image = Input(shape=(224, 224, 3))
 
     layer = conv(image, 48, (11, 11), pooling=False, stride=(4, 4))
@@ -39,14 +40,14 @@ def node_4_block1():
     return Model(image, layer)
 
 
-def node_4_block2():
+def block2():
     block_input = Input(shape=(6272,))
-    fc = Dense(2048, activation='relu')(block_input)
-    return Model(block_input, fc)
+    layer = Dense(2048, activation='relu')(block_input)
+    return Model(block_input, layer)
 
 
-def node_4_block3():
+def block3():
     block_input = Input(shape=(4096,))
-    fc = Dense(4096, activation='relu')(block_input)
-    fc = Dense(1000, activation='softmax')(fc)
-    return Model(block_input, fc)
+    layer = Dense(4096, activation='relu')(block_input)
+    layer = Dense(1000, activation='softmax')(layer)
+    return Model(block_input, layer)

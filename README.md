@@ -65,3 +65,21 @@ python initial.py
 ```angular2html
 python node.py -d
 ```
+
+##### Start vgg16 net system
+
+For VGG16, we have different model separation for different system setup, so we put
+two directories under `CPU/vgg16`. For `8devices`, you should have 2 devices for
+<b>block234</b> and <b>block6</b>, which means you need 2 IP addresses for those
+2 blocks in IP table. For `11devices`, you should have 7 devices for <b>block12345</b>,
+so put 7 IP addresses at IP table. 
+
+* On all of your device except the initial sender, run the node.
+```angular2html
+python node.py
+```
+
+* Start the data sender. You should be able to see console log.
+```angular2html
+python initial.py
+```

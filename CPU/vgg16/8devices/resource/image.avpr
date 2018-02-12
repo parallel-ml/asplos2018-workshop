@@ -1,0 +1,20 @@
+{
+  "protocol" : "image",
+  "namespace" : null,
+  "types" : [ ],
+  "messages" : {
+    "forward" : {
+      "request" : [ {
+        "name" : "input",
+        "type" : "bytes"
+      }, {
+        "name" : "next",
+        "type" : "string"
+      }, {
+        "name" : "tag",
+        "type" : "string"
+      } ],
+      "response" : "null"
+    }
+  }
+}

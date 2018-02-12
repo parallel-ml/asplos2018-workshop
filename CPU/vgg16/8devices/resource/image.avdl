@@ -1,0 +1,3 @@
+protocol image {
+    void forward(bytes input, string next, string tag);
+}
