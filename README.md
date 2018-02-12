@@ -2,8 +2,9 @@
 __ACM ReQuEST workshop co-located with ASPLOS 2018__
 
 
-This repository contains demo files for demonstration of Musical Chair[^fn1] applied on two state-of-art 
-deep learning neural networks, AlexNet[^fn2] and VGG16[^fn3].
+This repository contains demo files for demonstration of Musical Chair[1] applied on two state-of-art 
+deep learning neural networks, AlexNet[2] and VGG16[3].
+
 
 ## Installation
 Please make sure that you have <b>Python 2.7</b> running on your device. We have
@@ -102,11 +103,11 @@ python initial.py
 ```
 
 
-__References__
-[^fn1]: R. Hadidi, J. Cao, M. Woodward, M. Ryoo, and H. Kim, "Musical Chair: Efficient Real-Time Recognition Using Collaborative IoT Devices," ArXiv e-prints:1802.02138.
-[^fn2]: A. Krizhevsky, I. Sutskever, and G. E. Hinton, "Imagenet Classification With
+### Refereces
+[1]: R. Hadidi, J. Cao, M. Woodward, M. Ryoo, and H. Kim, "Musical Chair: Efficient Real-Time Recognition Using Collaborative IoT Devices," ArXiv e-prints:1802.02138.
+[2]: A. Krizhevsky, I. Sutskever, and G. E. Hinton, "Imagenet Classification With
   Deep Convolutional Neural Networks}," in Advances in Neural Information
   Processing Systems (NIPS), pp. 1097--1105, 2012.
-[^fn3]: K. Simonyan and A. Zisserman, "Very Deep Convolutional Networks for
+[3]: K. Simonyan and A. Zisserman, "Very Deep Convolutional Networks for
   Large-Scale Image Recognition," in International Conference on
   Learning Representations (ICLR), 2015.
