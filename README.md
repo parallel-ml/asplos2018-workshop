@@ -40,7 +40,9 @@ pip install -r requirements.txt
 
 ## Quick Start
 
-### Single device (GPU anc CPU)
+### Single device (GPU and CPU)
+_(This is NVidia Jetson TX2 version in our paper)_
+
 #### GPU Version
 Execute predict file to run model inference. 
 ```
@@ -52,6 +54,7 @@ CUDA_VISIBLE_DEVICE= python predict.py
 ```
 
 ### Multiple devices (CPU and RPC)
+_(This is Raspberry PI 3 versions in our paper)_
 
 We make a checklist for you before running our program.
 - [ ] Have all correct packages installed on Raspberry Pi. 
