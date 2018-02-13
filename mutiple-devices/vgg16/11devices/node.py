@@ -135,7 +135,7 @@ class Responder(ipc.Responder):
                     if req['next'] == 'block12345':
                         node.log('block12345 gets data')
                         X = np.fromstring(bytestr, np.uint8).reshape(224, 224, 3)
-                        node.model = ml.block12345()
+                        node.model = ml.block12345() if node.model is None else node.model
                         output = node.model.predict(np.array([X]))
                         node.log('finish block12345 forward')
                         for _ in range(2):
@@ -144,7 +144,7 @@ class Responder(ipc.Responder):
                     elif req['next'] == 'fc1':
                         node.log('fc1 gets data')
                         X = np.fromstring(bytestr, np.float32).reshape(25088)
-                        node.model = ml.fc1()
+                        node.model = ml.fc1() if node.model is None else node.model
                         output = node.model.predict(np.array([X]))
                         node.log('finish fc1 forward')
                         Thread(target=self.send, args=(output, 'fc2', req['tag'])).start()
@@ -162,7 +162,7 @@ class Responder(ipc.Responder):
                         while len(node.input) > 2:
                             node.input.popleft()
                         X = np.concatenate(node.input)
-                        node.model = ml.fc2()
+                        node.model = ml.fc2() if node.model is None else node.model
                         output = node.model.predict(np.array([X]))
                         node.log('finish model inference')
                         Thread(target=self.send, args=(output, 'initial', req['tag'])).start()
