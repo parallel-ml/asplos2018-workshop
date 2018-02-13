@@ -88,8 +88,8 @@ python node.py -d
 #### VGG16
 
 For VGG16, we have different model separation for different system setup, so we put
-two directories under `mutiple-devices/vgg16`. For `8devices`, you should have 2 devices for
-<b>block234</b> and <b>block6</b>, which means you need 2 IP addresses for those
+two directories under `mutiple-devices/vgg16`. For `8devices`, you should have 3 devices for
+<b>block234</b> and 2 devices for <b>fc1</b>, which means you need 2 IP addresses for those
 2 blocks in IP table. For `11devices`, you should have 7 devices for <b>block12345</b>,
 so put 7 IP addresses at IP table. 
 
