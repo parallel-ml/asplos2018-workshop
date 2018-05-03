@@ -50,7 +50,7 @@ python predict.py
 ```
 #### CPU Version
 ```
-CUDA_VISIBLE_DEVICE= python predict.py
+CUDA_VISIBLE_DEVICES= python predict.py
 ```
 
 ### Multiple devices (CPU and RPC)
